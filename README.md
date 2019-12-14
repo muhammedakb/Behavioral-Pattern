@@ -16,7 +16,7 @@ Uygulamanın ilk sürümü yalnızca yollar üzerindeki rotaları oluşturabiliy
 
 Ancak, bu sadece bir başlangıçtı. Daha sonra bisikletçiler için rota oluşturma eklemeyi planladınız. Ve daha sonra, bir kentin tüm turistik merkezlerinden geçen güzergahlar oluşturmak için başka bir seçenek.
 
-![](https://refactoring.guru/images/patterns/diagrams/strategy/problem.png)
+![karmaşa](https://refactoring.guru/images/patterns/diagrams/strategy/problem.png)
 
 Bir iş perspektifinden uygulama başarılı olsa da, teknik kısım size birçok baş ağrısına neden oldu. Her yeni bir yönlendirme algoritması eklediğinizde, gezginin ana sınıfı iki katına çıktı. Bir noktada, canavarın bakımı çok zorlaştı.
 
@@ -30,13 +30,13 @@ Strateji kalıbı, çok farklı şekillerde spesifik bir şeyler yapan bir sın�
 
 Bağlam adı verilen orijinal sınıf, stratejilerden birine referans saklamak için bir alana sahip olmalıdır. Bağlam, işi kendi başına yürütmek yerine bağlantılı bir strateji nesnesine devreder.
 
-![](https://refactoring.guru/images/patterns/diagrams/strategy/solution.png)
+![çözüm](https://refactoring.guru/images/patterns/diagrams/strategy/solution.png)
 
 Navigasyon uygulamamızda, her yönlendirme algoritması, tek bir buildRouteyöntemle kendi sınıfına çıkarılabilir . Yöntem bir başlangıç noktası ve varış yerini kabul eder ve rotanın kontrol noktalarının bir koleksiyonunu döndürür.
 
 YAPI
 
-![](https://refactoring.guru/images/patterns/diagrams/strategy/structure.png)
+![yapı](https://refactoring.guru/images/patterns/diagrams/strategy/structure.png)
 
 1)Bağlam sadece strateji arayüzü üzerinden bu cisimle beton stratejileri ve iletişim kurar birine başvuru içerir.
 

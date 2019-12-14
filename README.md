@@ -13,31 +13,34 @@ Uygulama için en çok istenen özelliklerden biri otomatik rota planlamasıydı
 Uygulamanın ilk sürümü yalnızca yollar üzerindeki rotaları oluşturabiliyordu. Araba ile seyahat eden insanlar neşeyle doluydu. Fakat görünüşe göre, herkes tatile çıkmayı sevmiyor. Böylece bir sonraki güncellemeyle, yürüyüş rotaları oluşturmak için bir seçenek eklediniz. Bundan hemen sonra, insanların toplu taşıma araçlarını rotalarında kullanmalarını sağlamak için başka bir seçenek eklediniz.
 
 Ancak, bu sadece bir başlangıçtı. Daha sonra bisikletçiler için rota oluşturma eklemeyi planladınız. Ve daha sonra, bir kentin tüm turistik merkezlerinden geçen güzergahlar oluşturmak için başka bir seçenek.
--0.jpg
+
+![](https://refactoring.guru/images/patterns/diagrams/strategy/problem.png)
+
 Bir iş perspektifinden uygulama başarılı olsa da, teknik kısım size birçok baş ağrısına neden oldu. Her yeni bir yönlendirme algoritması eklediğinizde, gezginin ana sınıfı iki katına çıktı. Bir noktada, canavarın bakımı çok zorlaştı.
 
 Algoritmalardan herhangi birinde yapılan herhangi bir değişiklik, ister basit bir hata düzeltmesi, isterse sokak puanının hafif bir şekilde ayarlanması olsun, tüm sınıfı etkiledi ve çalışmakta olan kodda hata oluşturma şansını artırdı.
 
 Buna ek olarak, takım çalışması verimsiz hale geldi. Başarılı sürümden hemen sonra işe alınan takım arkadaşlarınız, birleşme çatışmalarını çözmek için çok fazla zaman harcadıklarından şikayet ediyorlar. Yeni bir özellik uygulamak, diğer insanlar tarafından üretilen kodla çelişen aynı dev sınıfı değiştirmenizi gerektirir.
 
-
 ÇÖZÜM
+
 Strateji kalıbı, çok farklı şekillerde spesifik bir şeyler yapan bir sınıf almanızı ve tüm bu algoritmaları stratejiler adı verilen ayrı sınıflara çıkarmanızı önerir .
 
 Bağlam adı verilen orijinal sınıf, stratejilerden birine referans saklamak için bir alana sahip olmalıdır. Bağlam, işi kendi başına yürütmek yerine bağlantılı bir strateji nesnesine devreder.
 
---1.jpg
+![](https://refactoring.guru/images/patterns/diagrams/strategy/solution.png)
 
 Navigasyon uygulamamızda, her yönlendirme algoritması, tek bir buildRouteyöntemle kendi sınıfına çıkarılabilir . Yöntem bir başlangıç noktası ve varış yerini kabul eder ve rotanın kontrol noktalarının bir koleksiyonunu döndürür.
 
-
 YAPI
---2.jpg
-1) Bağlam sadece strateji arayüzü üzerinden bu cisimle beton stratejileri ve iletişim kurar birine başvuru içerir.
-2)Strateji arayüzü tüm somut stratejiler için ortaktır. Bağlamın bir stratejiyi yürütmek için kullandığı bir yöntem ilan eder.
-3)Somut Stratejiler , bağlamın kullandığı bir algoritmanın farklı çeşitlerini uygular
-4)Bağlam, algoritmayı çalıştırması gereken her seferinde bağlantılı strateji nesnesinde yürütme yöntemini çağırır. Bağlam, ne tür bir strateji ile çalıştığını veya algoritmanın nasıl yürütüldüğünü bilmiyor.
-5)Müşteri belli bir strateji nesnesi yaratır ve bağlama geçirir. Bağlam, istemcilerin çalışma zamanında bağlamla ilişkili stratejiyi değiştirmelerini sağlayan bir ayarlayıcı gösterir.
+
+![](https://refactoring.guru/images/patterns/diagrams/strategy/structure.png)
+
+-Bağlam sadece strateji arayüzü üzerinden bu cisimle beton stratejileri ve iletişim kurar birine başvuru içerir.
+-Strateji arayüzü tüm somut stratejiler için ortaktır. Bağlamın bir stratejiyi yürütmek için kullandığı bir yöntem ilan eder.
+-Somut Stratejiler , bağlamın kullandığı bir algoritmanın farklı çeşitlerini uygular
+-Bağlam, algoritmayı çalıştırması gereken her seferinde bağlantılı strateji nesnesinde yürütme yöntemini çağırır. Bağlam, ne tür bir strateji ile çalıştığını veya algoritmanın nasıl yürütüldüğünü bilmiyor.
+-Müşteri belli bir strateji nesnesi yaratır ve bağlama geçirir. Bağlam, istemcilerin çalışma zamanında bağlamla ilişkili stratejiyi değiştirmelerini sağlayan bir ayarlayıcı gösterir.
 
 
 #CODE

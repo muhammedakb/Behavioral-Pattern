@@ -49,7 +49,7 @@ YAPI
 5)Müşteri belli bir strateji nesnesi yaratır ve bağlama geçirir. Bağlam, istemcilerin çalışma zamanında bağlamla ilişkili stratejiyi değiştirmelerini sağlayan bir ayarlayıcı gösterir.
 
 
-#CODE
+#KOD
 
 Bu örnekte, bağlam çeşitli aritmetik işlemleri gerçekleştirmek için çoklu stratejiler kullanır .
 

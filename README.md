@@ -1,13 +1,13 @@
-# Yazılım Mimarisi ve Tasarımı
+# YAZILIM MİMARİSİ VE TASARIMI
 
-Yazılım Mimarisi ve Tasarımı Pattern
-
-Behavioral Pattern
+BEHAVİORAL PATTERN
 
 STRATEJİ
+
 Strateji , bir algoritma ailesi tanımlamanıza, her birini ayrı bir sınıfa yerleştirmenize ve nesnelerini birbirleriyle değiştirmenize olanak sağlayan davranışsal bir tasarım desenidir.
 
 SORUN
+
 Bir gün rahat gezginler için bir navigasyon uygulaması oluşturmaya karar verdiniz. Uygulama, kullanıcıların hızlı bir şekilde kendilerini herhangi bir şehirde yönlendirmelerini sağlayan güzel bir harita etrafında toplandı.
 
 Uygulama için en çok istenen özelliklerden biri otomatik rota planlamasıydı. Bir kullanıcı bir adres girebilmeli ve haritada görüntülenen hedefin en hızlı rotasını görebilmelidir.

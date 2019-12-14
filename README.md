@@ -36,11 +36,15 @@ YAPI
 
 ![](https://refactoring.guru/images/patterns/diagrams/strategy/structure.png)
 
--Bağlam sadece strateji arayüzü üzerinden bu cisimle beton stratejileri ve iletişim kurar birine başvuru içerir.
--Strateji arayüzü tüm somut stratejiler için ortaktır. Bağlamın bir stratejiyi yürütmek için kullandığı bir yöntem ilan eder.
--Somut Stratejiler , bağlamın kullandığı bir algoritmanın farklı çeşitlerini uygular
--Bağlam, algoritmayı çalıştırması gereken her seferinde bağlantılı strateji nesnesinde yürütme yöntemini çağırır. Bağlam, ne tür bir strateji ile çalıştığını veya algoritmanın nasıl yürütüldüğünü bilmiyor.
--Müşteri belli bir strateji nesnesi yaratır ve bağlama geçirir. Bağlam, istemcilerin çalışma zamanında bağlamla ilişkili stratejiyi değiştirmelerini sağlayan bir ayarlayıcı gösterir.
+1)Bağlam sadece strateji arayüzü üzerinden bu cisimle beton stratejileri ve iletişim kurar birine başvuru içerir.
+
+2)Strateji arayüzü tüm somut stratejiler için ortaktır. Bağlamın bir stratejiyi yürütmek için kullandığı bir yöntem ilan eder.
+
+3)Somut Stratejiler , bağlamın kullandığı bir algoritmanın farklı çeşitlerini uygular
+
+4)Bağlam, algoritmayı çalıştırması gereken her seferinde bağlantılı strateji nesnesinde yürütme yöntemini çağırır. Bağlam, ne tür bir strateji ile çalıştığını veya algoritmanın nasıl yürütüldüğünü bilmiyor.
+
+5)Müşteri belli bir strateji nesnesi yaratır ve bağlama geçirir. Bağlam, istemcilerin çalışma zamanında bağlamla ilişkili stratejiyi değiştirmelerini sağlayan bir ayarlayıcı gösterir.
 
 
 #CODE

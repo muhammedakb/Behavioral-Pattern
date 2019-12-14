@@ -54,15 +54,20 @@ YAPI
 Bu örnekte, bağlam çeşitli aritmetik işlemleri gerçekleştirmek için çoklu stratejiler kullanır .
 
 // Strateji arayüzü herkes için ortak işlemler ilan etti
+
 // Bazı algoritmaların desteklenen sürümleri. Bağlam bunu kullanır
+
 // somut madde tarafından tanımlanan algoritmayı çağırmak için arayüz
+
 // stratejiler
 
     interface Strategy is
         method execute(a, b)
 
 // Somut stratejiler algoritmayı takip ederken uygular
+
 // temel strateji arayüzü. Arayüz onları yapar
+
 // bağlamda değiştirilebilir.
 
     class ConcreteStrategyAdd implements Strategy is
@@ -82,20 +87,28 @@ Bu örnekte, bağlam çeşitli aritmetik işlemleri gerçekleştirmek için çok
     class Context is
     
    // Bağlam, stratejilerden birine referansta bulunur.
+   
    // Bağlam bir somut sınıfını bilmiyor
+   
    // Tüm stratejilerle birlikte çalışmalıdır.
+   
    // strateji arayüzü.
    
     private strategy: Strategy
 
    // Genellikle bağlam, aracılığıyla bir strateji kabul eder.
+   
    // yapıcı ve ayrıca bir ayarlayıcı sağlar
+   
    // Strateji çalışma zamanında değiştirilebilir.
+   
     method setStrategy(Strategy strategy) is
         this.strategy = strategy
 
    // Bağlam, bazı çalışmaları strateji nesnesine devreder
+   
    // birden fazla sürümünü uygulamak yerine
+   
    // algoritma kendi başınadır.
     
     method executeStrategy(int a, int b) is
@@ -103,7 +116,9 @@ Bu örnekte, bağlam çeşitli aritmetik işlemleri gerçekleştirmek için çok
 
 
 // Müşteri kodu somut bir strateji seçer ve bunu iletir.
+
 // Bağlam. Müşteri farklılıkların farkında olmalı
+
 // Doğru seçimi yapabilmek için stratejiler arasında seçim.
 
     class ExampleApplication is
@@ -132,7 +147,10 @@ Bu örnekte, bağlam çeşitli aritmetik işlemleri gerçekleştirmek için çok
 UYGULANABİLİRLİK
 
 -Bir nesnenin içinde bir algoritmanın farklı değişkenlerini kullanmak ve çalışma zamanı sırasında bir algoritmadan diğerine geçmek istediğinizde Strateji desenini kullanın.
+
 -Stratejiyi, yalnızca davranışlarını uyguladıkları şekilde farklı olan çok sayıda benzer sınıfınız olduğunda kullanın.
+
 -Bir sınıfın iş mantığını, o mantık bağlamında önemli olmayabilecek algoritmaların uygulama ayrıntılarından ayırmak için modeli kullanın.
+
 -Sınıfınızda, aynı algoritmanın farklı değişkenleri arasında geçiş yapan çok büyük bir koşullu işleç varsa deseni kullanın.
 

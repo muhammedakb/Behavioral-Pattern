@@ -2,11 +2,11 @@
 
 BEHAVİORAL PATTERN
 
-STRATEJİ
+- STRATEJİ
 
 Strateji , bir algoritma ailesi tanımlamanıza, her birini ayrı bir sınıfa yerleştirmenize ve nesnelerini birbirleriyle değiştirmenize olanak sağlayan davranışsal bir tasarım desenidir.
 
-SORUN
+- SORUN
 
 Bir gün rahat gezginler için bir navigasyon uygulaması oluşturmaya karar verdiniz. Uygulama, kullanıcıların hızlı bir şekilde kendilerini herhangi bir şehirde yönlendirmelerini sağlayan güzel bir harita etrafında toplandı.
 
@@ -24,7 +24,7 @@ Algoritmalardan herhangi birinde yapılan herhangi bir değişiklik, ister basit
 
 Buna ek olarak, takım çalışması verimsiz hale geldi. Başarılı sürümden hemen sonra işe alınan takım arkadaşlarınız, birleşme çatışmalarını çözmek için çok fazla zaman harcadıklarından şikayet ediyorlar. Yeni bir özellik uygulamak, diğer insanlar tarafından üretilen kodla çelişen aynı dev sınıfı değiştirmenizi gerektirir.
 
-ÇÖZÜM
+- ÇÖZÜM
 
 Strateji kalıbı, çok farklı şekillerde spesifik bir şeyler yapan bir sınıf almanızı ve tüm bu algoritmaları stratejiler adı verilen ayrı sınıflara çıkarmanızı önerir .
 
@@ -34,7 +34,7 @@ Bağlam adı verilen orijinal sınıf, stratejilerden birine referans saklamak i
 
 Navigasyon uygulamamızda, her yönlendirme algoritması, tek bir buildRouteyöntemle kendi sınıfına çıkarılabilir . Yöntem bir başlangıç noktası ve varış yerini kabul eder ve rotanın kontrol noktalarının bir koleksiyonunu döndürür.
 
-YAPI
+- YAPI
 
 ![yapı](https://refactoring.guru/images/patterns/diagrams/strategy/structure.png)
 
@@ -49,7 +49,7 @@ YAPI
 5)Müşteri belli bir strateji nesnesi yaratır ve bağlama geçirir. Bağlam, istemcilerin çalışma zamanında bağlamla ilişkili stratejiyi değiştirmelerini sağlayan bir ayarlayıcı gösterir.
 
 
-#KOD
+- KOD#
 
 Bu örnekte, bağlam çeşitli aritmetik işlemleri gerçekleştirmek için çoklu stratejiler kullanır .
 
@@ -144,7 +144,7 @@ Bu örnekte, bağlam çeşitli aritmetik işlemleri gerçekleştirmek için çok
 
 
 
-UYGULANABİLİRLİK
+- UYGULANABİLİRLİK
 
 -Bir nesnenin içinde bir algoritmanın farklı değişkenlerini kullanmak ve çalışma zamanı sırasında bir algoritmadan diğerine geçmek istediğinizde Strateji desenini kullanın.
 

@@ -53,22 +53,22 @@ YAPI
 
 Bu örnekte, bağlam çeşitli aritmetik işlemleri gerçekleştirmek için çoklu stratejiler kullanır .
 
-// Strateji arayüzü herkes için ortak işlemler ilan etti
+    // Strateji arayüzü herkes için ortak işlemler ilan etti
 
-// Bazı algoritmaların desteklenen sürümleri. Bağlam bunu kullanır
+    // Bazı algoritmaların desteklenen sürümleri. Bağlam bunu kullanır
 
-// somut madde tarafından tanımlanan algoritmayı çağırmak için arayüz
+    // somut madde tarafından tanımlanan algoritmayı çağırmak için arayüz
 
-// stratejiler
+    // stratejiler
 
     interface Strategy is
         method execute(a, b)
 
-// Somut stratejiler algoritmayı takip ederken uygular
+    // Somut stratejiler algoritmayı takip ederken uygular
 
-// temel strateji arayüzü. Arayüz onları yapar
+    // temel strateji arayüzü. Arayüz onları yapar
 
-// bağlamda değiştirilebilir.
+    // bağlamda değiştirilebilir.
 
     class ConcreteStrategyAdd implements Strategy is
        method execute(a, b) is
@@ -82,44 +82,44 @@ Bu örnekte, bağlam çeşitli aritmetik işlemleri gerçekleştirmek için çok
         method execute(a, b) is
            return a * b
 
-// Bağlam, müşterilere ilgi arayüzünü tanımlar.
+    // Bağlam, müşterilere ilgi arayüzünü tanımlar.
 
     class Context is
     
-   // Bağlam, stratejilerden birine referansta bulunur.
+    // Bağlam, stratejilerden birine referansta bulunur.
    
-   // Bağlam bir somut sınıfını bilmiyor
+    // Bağlam bir somut sınıfını bilmiyor
    
-   // Tüm stratejilerle birlikte çalışmalıdır.
+    // Tüm stratejilerle birlikte çalışmalıdır.
    
-   // strateji arayüzü.
+    // strateji arayüzü.
    
     private strategy: Strategy
 
-   // Genellikle bağlam, aracılığıyla bir strateji kabul eder.
+    // Genellikle bağlam, aracılığıyla bir strateji kabul eder.
    
-   // yapıcı ve ayrıca bir ayarlayıcı sağlar
-   
-   // Strateji çalışma zamanında değiştirilebilir.
+    // yapıcı ve ayrıca bir ayarlayıcı sağlar
+    
+    // Strateji çalışma zamanında değiştirilebilir.
    
     method setStrategy(Strategy strategy) is
         this.strategy = strategy
 
-   // Bağlam, bazı çalışmaları strateji nesnesine devreder
+    // Bağlam, bazı çalışmaları strateji nesnesine devreder
    
-   // birden fazla sürümünü uygulamak yerine
+    // birden fazla sürümünü uygulamak yerine
    
-   // algoritma kendi başınadır.
+    // algoritma kendi başınadır.
     
     method executeStrategy(int a, int b) is
         return strategy.execute(a, b)
 
 
-// Müşteri kodu somut bir strateji seçer ve bunu iletir.
+    // Müşteri kodu somut bir strateji seçer ve bunu iletir.
 
-// Bağlam. Müşteri farklılıkların farkında olmalı
+    // Bağlam. Müşteri farklılıkların farkında olmalı
 
-// Doğru seçimi yapabilmek için stratejiler arasında seçim.
+    // Doğru seçimi yapabilmek için stratejiler arasında seçim.
 
     class ExampleApplication is
     method main() is

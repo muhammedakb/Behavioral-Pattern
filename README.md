@@ -48,6 +48,7 @@ YAPI
 
 
 #CODE
+
 Bu örnekte, bağlam çeşitli aritmetik işlemleri gerçekleştirmek için çoklu stratejiler kullanır .
 
 // Strateji arayüzü herkes için ortak işlemler ilan etti
